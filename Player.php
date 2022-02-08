@@ -20,7 +20,7 @@ class Player {
 
     public function getCity () : ?string
     {
-        return $this->city;
+        return $this?->city;
     }
 
     public function getName () : string 
