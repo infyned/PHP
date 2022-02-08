@@ -13,7 +13,7 @@ class Tournament {
 
     public function __construct (
         private string $name, 
-        private $date = ""
+        private string $date = ""
         ) {
         $this->name = $name;
         if ($date !== "") {    
@@ -61,6 +61,11 @@ class Tournament {
             for ($i = 0; $i < $num_of_games; $i++) {
                 $team1 = $participants[$num_of_games - $i];
                 $team2 = $participants[$num_of_games + $i + 1];
+
+                if($team1->getName() === "Unknown" || $team2->getName() === "Unknown") {
+                    continue;
+                }
+
                 $results[] = $team1;
                 $results[] = $team2;
                 echo nl2br($results[0]->getName() . ($results[0]->getCity() ? " (" . $results[0]->getCity() . ") " : "") . "  -  " 
