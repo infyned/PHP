@@ -12,15 +12,15 @@ class Player {
         $this->name = $name;
     }
 
-    public function setCity (?string $city) : Player 
-    {
+    public function setCity (string $city) : Player 
+    {   
         $this->city = $city;
         return $this;
     }
 
-    public function getCity () : ?string
-    {
-        return $this?->city;
+    public function getCity () : string
+    {   
+       return $this->city;
     }
 
     public function getName () : string 
